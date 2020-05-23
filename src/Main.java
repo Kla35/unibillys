@@ -77,7 +77,7 @@ public class Main extends Application {
 		} else {
 			System.exit(1);
 		}
-		Main.version_local = Gestion.verifyVersionLocal();
+		/*Main.version_local = Gestion.verifyVersionLocal();
 		String version_serveur = Gestion.verifyVersionServer();
 		if(!version_serveur.equals("") && !Main.version_local.equals("")) {
 			if(Main.version_local.equals(version_serveur)) {
@@ -107,7 +107,15 @@ public class Main extends Application {
 			fenetre = new Fenetre();
 			Main.fenetre.show();
 			System.out.println("Imposible à vérifier");
-		}
+		}*/
+		
+		Gestion.saveLock();
+		Gestion.loadLivre();
+		Gestion.loadEmprunteur();
+		Gestion.loadEmprunt();
+		Gestion.loadGenre();
+		fenetre = new Fenetre();
+		Main.fenetre.show();
 		
 		 
 		// TODO Auto-generated method stub
