@@ -216,15 +216,21 @@ public class Fenetre extends Stage{
 	final MenuItem exitItem = new MenuItem("Quitter"); 
 	final Menu fileMenu = new Menu("Fichier"); 
 	fileMenu.getItems().setAll(exitItem); 
-	final MenuItem copyItem = new MenuItem("Copier"); 
-	final MenuItem cutItem = new MenuItem("Couper"); 
-	final MenuItem pasteItem = new MenuItem("Coller"); 
+	final MenuItem importItem = new MenuItem("Importer des données"); 
+	final MenuItem exportItem = new MenuItem("Exporter des données");
 	final MenuItem optionsItem= new MenuItem("Options...");  
 	final Menu editMenu = new Menu("Édition"); 
-	editMenu.getItems().setAll(copyItem, cutItem, pasteItem, new SeparatorMenuItem(), optionsItem); 
-	final MenuItem aboutItem = new MenuItem("À propos..."); 
+	editMenu.getItems().setAll(importItem, exportItem, new SeparatorMenuItem(), optionsItem); 
+	final MenuItem aboutItem = new MenuItem("À propos...");
+	final MenuItem infoMenu = new MenuItem("Informations"); 
 	final Menu helpMenu = new Menu("Aide"); 
-	helpMenu.getItems().setAll(aboutItem);
+	helpMenu.getItems().setAll(infoMenu,aboutItem);
+	
+	exitItem.setOnAction(actionEvent -> {
+		Main.lock = 0;
+		Gestion.saveLock();
+		System.exit(1);
+	});
 	
 	menuBar.getMenus().setAll(fileMenu, editMenu, helpMenu);
 	
