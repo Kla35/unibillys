@@ -39,7 +39,6 @@ public class Fenetre extends Stage{
 	static private MenuItem optionSupprimerPret = new MenuItem("Supprimer prêt");
 	
 	static private ContextMenu menuLivre = new ContextMenu(optionAfficherLivre,optionAjouterLivre,optionModifierLivre,optionSupprimerLivre,new SeparatorMenuItem(),optionCreerPret,optionSupprimerPret);
-	
 	static private MenuItem optionAjouterEmprunteur = new MenuItem("Ajouter emprunteur...");
 	static private MenuItem optionModifierEmprunteur = new MenuItem("Modifier emprunteur...");
 	static private MenuItem optionSupprimerEmprunteur = new MenuItem("Supprimer emprunteur...");
@@ -62,20 +61,20 @@ public class Fenetre extends Stage{
 	
 	/*RANDOM STUFF*/
 	static MenuBar menuBar = new MenuBar(); 
-	static Button btnLivreAfficher = new Button("Afficher");
-	static Button btnLivreAjouter = new Button("Ajouter");
-	static Button btnLivreModifier = new Button("Modifier");
-	static Button btnLivreSupprimer = new Button("Supprimer");
-	static Button btnLivreCreerEmprunt = new Button("Créer\nEmprunt");
-	static Button btnLivreSupprimerEmprunt = new Button("Supprimer\nEmprunt");
-	static Button btnLivreListeEmprunt = new Button("Liste des\nlivres\nempruntés");
-	static Button btnEmprAjouter = new Button("Ajouter");
-	static Button btnEmprModifier = new Button("Modifier");
-	static Button btnEmprSupprimer = new Button("Supprimer");
-	static Button btnEmprListeEmprunt = new Button("Emprunt\ndu lecteur");
-	static Button btnSupprRechAvancee = new Button("Affichage Normal");
+	static Button btnLivreAfficher = new Button(Translate.WINDOW_SHOW_BOOK);
+	static Button btnLivreAjouter = new Button(Translate.WINDOW_ADD_BOOK);
+	static Button btnLivreModifier = new Button(Translate.WINDOW_MODIFY_BOOK);
+	static Button btnLivreSupprimer = new Button(Translate.WINDOW_REMOVE_BOOK);
+	static Button btnLivreCreerEmprunt = new Button(Translate.WINDOW_CREATE_BORROW);
+	static Button btnLivreSupprimerEmprunt = new Button(Translate.WINDOW_DELETE_BORROW);
+	static Button btnLivreListeEmprunt = new Button(Translate.WINDOW_SHOW_LIST_BORROWS);
+	static Button btnEmprAjouter = new Button(Translate.WINDOW_ADD_BORROWER);
+	static Button btnEmprModifier = new Button(Translate.WINDOW_MODIFY_BORROWER);
+	static Button btnEmprSupprimer = new Button(Translate.WINDOW_DELETE_BORROWER);
+	static Button btnEmprListeEmprunt = new Button(Translate.WINDOW_LIST_BORROW_BORROWER);
+	static Button btnSupprRechAvancee = new Button(Translate.WINDOW_NORMAL_DISPLAY);
 	static Button btnUploadData = new Button("Upload\nsave app");
-	static Button btnRechercheAvancee = new Button("Recherche Avancée");
+	static Button btnRechercheAvancee = new Button(Translate.WINDOW_ADVANCED_SEARCH);
 	
 	static TextField fieldRechercheLivre = new TextField();
 	
@@ -109,7 +108,7 @@ public class Fenetre extends Stage{
 		hboxTitle.setAlignment(Pos.CENTER);
 		//Left
 			//Label Recherche Livre
-		Label		lRechercheLivre		= new Label("Rechercher un livre :");
+		Label		lRechercheLivre		= new Label(Translate.WINDOW_LABEL_SEARCH_BOOK);
 		HBox hboxLabelRechLivre = new HBox();
 		hboxLabelRechLivre.getChildren().add(lRechercheLivre);
 		hboxLabelRechLivre.setAlignment(Pos.TOP_LEFT);
@@ -186,7 +185,7 @@ public class Fenetre extends Stage{
 	/*--------------------------------------*---------------*------------*----------------------------------*/	
 		//Right
 		//Right Recherche Emprunteur V
-	Label		lRechercheEmprunteur		= new Label("Rechercher un emprunteur :");
+	Label		lRechercheEmprunteur		= new Label(Translate.WINDOW_LABEL_SEARCH_BORROWER);
 	HBox hboxLabelRechEmpr = new HBox();
 	hboxLabelRechEmpr.getChildren().add(lRechercheEmprunteur);
 	hboxLabelRechEmpr.setPadding(new Insets(-5,0,10,0));
@@ -230,6 +229,10 @@ public class Fenetre extends Stage{
 		Main.lock = 0;
 		Gestion.saveLock();
 		System.exit(1);
+	});
+	
+	optionsItem.setOnAction(actionEvent -> {
+		Main.ouvrirPreferences();
 	});
 	
 	menuBar.getMenus().setAll(fileMenu, editMenu, helpMenu);

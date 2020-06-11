@@ -31,13 +31,15 @@ public class Translate {
 	public Translate(String language) {
 		switch(language) {
 		case "Français":
+			Translate.translateFrench();
 			break;
 		case "English" :
+			Translate.translateEnglish();
 			break;
 		}
 	}
 	
-	public void translateEmpty() {
+	public static void translateEmpty() {
 		Translate.WINDOW_ADVANCED_SEARCH = "";
 		Translate.WINDOW_NORMAL_DISPLAY = "";
 		Translate.WINDOW_SHOW_BOOK = "";
@@ -66,22 +68,22 @@ public class Translate {
 		Translate.MENUBAR_HELP_ABOUT = "";
 	}
 	
-	public void translateFrench() {
-		Translate.WINDOW_ADVANCED_SEARCH = "";
-		Translate.WINDOW_NORMAL_DISPLAY = "";
-		Translate.WINDOW_SHOW_BOOK = "";
-		Translate.WINDOW_ADD_BOOK = "";
-		Translate.WINDOW_REMOVE_BOOK = "";
-		Translate.WINDOW_MODIFY_BOOK = "";
-		Translate.WINDOW_CREATE_BORROW= "";
-		Translate.WINDOW_DELETE_BORROW = "";
-		Translate.WINDOW_SHOW_LIST_BORROWS = "";
-		Translate.WINDOW_ADD_BORROWER = "";
-		Translate.WINDOW_MODIFY_BORROWER = "";
-		Translate.WINDOW_DELETE_BORROWER = "";
-		Translate.WINDOW_LIST_BORROW_BORROWER = "";
-		Translate.WINDOW_LABEL_SEARCH_BOOK = "";
-		Translate.WINDOW_LABEL_SEARCH_BORROWER = "";
+	public static void translateFrench() {
+		Translate.WINDOW_ADVANCED_SEARCH = "Recherche Avancée";
+		Translate.WINDOW_NORMAL_DISPLAY = "Affichage Normal";
+		Translate.WINDOW_SHOW_BOOK = "Afficher";
+		Translate.WINDOW_ADD_BOOK = "Ajouter";
+		Translate.WINDOW_REMOVE_BOOK = "Supprimer";
+		Translate.WINDOW_MODIFY_BOOK = "Modifier";
+		Translate.WINDOW_CREATE_BORROW= "Créer\nEmprunt";
+		Translate.WINDOW_DELETE_BORROW = "Supprimer\nEmprunt";
+		Translate.WINDOW_SHOW_LIST_BORROWS = "Liste des\nlivres\nempruntés";
+		Translate.WINDOW_ADD_BORROWER = "Ajouter";
+		Translate.WINDOW_MODIFY_BORROWER = "Modifier";
+		Translate.WINDOW_DELETE_BORROWER = "Supprimer";
+		Translate.WINDOW_LIST_BORROW_BORROWER = "Emprunt\ndu lecteur";
+		Translate.WINDOW_LABEL_SEARCH_BOOK = "Rechercher un livre :";
+		Translate.WINDOW_LABEL_SEARCH_BORROWER = "Rechercher un emprunteur :";
 		
 		//MENU BAR TEXT
 		Translate.MENUBAR_FILE = "";
@@ -95,7 +97,7 @@ public class Translate {
 		Translate.MENUBAR_HELP_ABOUT = "";
 	}
 	
-	public void translateEnglish() {
+	public static void translateEnglish() {
 		Translate.WINDOW_ADVANCED_SEARCH = "";
 		Translate.WINDOW_NORMAL_DISPLAY = "";
 		Translate.WINDOW_SHOW_BOOK = "";

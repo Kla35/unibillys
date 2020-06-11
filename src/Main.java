@@ -27,7 +27,9 @@ public class Main extends Application {
 	static private AjouterGenre2 fajgenre2;
 	static private ModifierGenre fmodgenre;
 	static private ModifierGenre2 fmodgenre2;
+	static private Preferences fpreferences;
 	
+	static public Translate translate = new Translate("Français");
 	static public String windowcolor = "#048b9a";
 	static public String version_local = "";
 	
@@ -127,6 +129,13 @@ public class Main extends Application {
 		frecherche.initOwner(Main.fenetre);
 		frecherche.initModality(Modality.WINDOW_MODAL);
 		frecherche.show();
+	}
+	
+	static public void ouvrirPreferences(){
+		fpreferences = new Preferences();
+		fpreferences.initOwner(Main.fenetre);
+		fpreferences.initModality(Modality.WINDOW_MODAL);
+		fpreferences.show();
 	}
 	
 	static public void ouvrirAfficherLivre(Livre l){
